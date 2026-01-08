@@ -59,3 +59,39 @@
 - Filter books by library  
 - Search books by title or author
 - Get all books under a library
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-Create a controller file to implement the logic for creating, 
+  updating, deleting users — keeps routes simple and makes logic reusable and testable.
+
+-Folder structure: include a routes/ folder, one file per endpoint, 
+  importing functions from the controller — organizes code and separates HTTP handling from business logic.
+
+-Path Parameters for Update/Delete: send the resource ID as a path parameter
+ —  clearly identifies the resource.
+
+-Keep HTTP status codes in a constants file 
+  — improves readability and consistency across the codebase.
+
+-Store sensitive info in environment variables and provide an .env.example ---done
+  — keeps secrets safe and makes setup easier for others. ---done
+
+-Handle errors before the database: validate inputs and catch errors at the application level
+ — prevents unnecessary database calls and returns cleaner error messages.

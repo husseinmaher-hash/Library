@@ -29,6 +29,11 @@ curl -X POST http://127.0.0.1:5000/books \
 -d '{"title": "ASDLKASDlkA", "author": "ali", "libraryId": 1}'
 
 
+curl -X POST http://127.0.0.1:5000/books \
+-H "Content-Type: application/json" \
+-d '{    "title": "sara hi",    "author": "sara",    "libraryId": 2}'
+
+
 
 curl http://127.0.0.1:5000/books
 
