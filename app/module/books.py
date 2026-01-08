@@ -1,6 +1,6 @@
 from datetime import datetime
 from .. import database
-
+from sqlalchemy.orm import validates
 class Book(database.Model):
     __tablename__ = "books"
 
@@ -18,5 +18,17 @@ class Book(database.Model):
 
     library = database.relationship("Library", back_populates="books")
 
+
+    @validates('title')
+    def validate_title(self, key, title):
+        if not title or len(title.strip()) == 0:
+            raise ValueError("Book title cannot be empty")
+        return title
+
+    @validates('author')
+    def validate_author(self, key, author):
+        if not author or len(author.strip()) == 0:
+            raise ValueError("Author name cannot be empty")
+        return author
     def __repr__(self):
         return f"<Book {self.title}>"
