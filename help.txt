@@ -1,0 +1,59 @@
+export FLASK_APP=run.py
+export FLASK_ENV=development
+
+flask db init       
+flask db migrate -m "add library and book models" 
+flask db upgrade   
+
+python3 run.py husseinMaher123
+
+
+
+
+
+
+
+
+curl -X POST http://127.0.0.1:5000/libraries \
+-H "Content-Type: application/json" \
+-d '{"name": "Hussein"}'
+
+
+curl http://127.0.0.1:5000/libraries
+
+
+
+
+curl -X POST http://127.0.0.1:5000/books \
+-H "Content-Type: application/json" \
+-d '{"title": "ASDLKASDlkA", "author": "ali", "libraryId": 1}'
+
+
+
+curl http://127.0.0.1:5000/books
+
+
+
+
+
+
+
+rm app.db
+rm -rf migrations
+export FLASK_APP=run.py
+flask db init
+flask db migrate -m "initial migration"
+flask db upgrade
+
+
+
+
+
+
+
+
+
+
+
+sqlite3 app.db
+.tables
