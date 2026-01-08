@@ -13,7 +13,8 @@ def createApp():
     app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = AppConfig.sqlalchemyTrackModifications
 
     database.init_app(app)
-
+    
+    #to ensure registered with SQLAlchemy before migration
     from .module.library import Library
     from .module.books import Book
 

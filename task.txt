@@ -78,11 +78,11 @@
 
 
 
--Create a controller file to implement the logic for creating, 
-  updating, deleting users — keeps routes simple and makes logic reusable and testable.
+-Create a controller file to implement the logic for creating,  --done
+  updating, deleting users — keeps routes simple and makes logic reusable and testable. ---done
 
--Folder structure: include a routes/ folder, one file per endpoint, 
-  importing functions from the controller — organizes code and separates HTTP handling from business logic.
+-Folder structure: include a routes/ folder, one file per endpoint, --done
+  importing functions from the controller — organizes code and separates HTTP handling from business logic. --done
 
 -Path Parameters for Update/Delete: send the resource ID as a path parameter
  —  clearly identifies the resource.
