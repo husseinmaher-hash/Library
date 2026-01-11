@@ -95,3 +95,32 @@
 
 -Handle errors before the database: validate inputs and catch errors at the application level
  — prevents unnecessary database calls and returns cleaner error messages.
+
+
+
+
+
+
+
+
+
+
+
+
+Add User table؛
+Each user owns one library
+Implement CRUD for:
+User
+
+Add an endpoint:
+User can get number of books in their own library
+
+Implement:
+Transfer books between libraries
+
+
+Write unit tests for the project
+
+
+
+

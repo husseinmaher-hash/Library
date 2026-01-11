@@ -8,7 +8,7 @@ class Library(database.Model):
     books = database.relationship("Book", back_populates="library", cascade="all, delete-orphan")
 
     @validates('name')
-    def validate_name(self, key, name):
+    def validate_name(self, name):
         if not name or len(name.strip()) == 0:
             raise ValueError("Library name must be a string ant not empty")
         return name
