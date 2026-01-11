@@ -20,13 +20,13 @@ class Book(database.Model):
 
 
     @validates('title')
-    def validate_title(self, key, title):
+    def validate_title(self, title):
         if not title or len(title.strip()) == 0:
             raise ValueError("Book title cannot be empty")
         return title
 
     @validates('author')
-    def validate_author(self, key, author):
+    def validate_author(self, author):
         if not author or len(author.strip()) == 0:
             raise ValueError("Author name cannot be empty")
         return author

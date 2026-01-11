@@ -44,8 +44,8 @@ def listUserAction():
     } for u in user]
     return jsonify(result), 200
 
-def updateUserAction(userId, data):
 
+def updateUserAction(userId, data):
     try:
         user = User.query.get(userId)
         name = data.get("name")
