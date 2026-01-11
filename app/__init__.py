@@ -17,13 +17,16 @@ def createApp():
     #to ensure registered with SQLAlchemy before migration
     from .module.library import Library
     from .module.books import Book
+    from .module.user import User
 
     migration.init_app(app, database)
 
     from .routes.library_routes import libraryBP
     from .routes.book_routes import bookBP
+    from .routes.user_routes import userBP
     app.register_blueprint(libraryBP)
     app.register_blueprint(bookBP)
+    app.register_blueprint(userBP)
 
     @app.route("/")
     def indexRoute():

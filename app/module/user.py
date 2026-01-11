@@ -8,7 +8,7 @@ class User(database.Model):
     library = database.relationship("Library", back_populates="owner", uselist=False)
 
     @validates('name')
-    def validate_name(self, name):
+    def validate_name(self,key, name):
         if not name or len(name.strip()) == 0:
             raise ValueError("user name must be a string ant not empty")
         return name
