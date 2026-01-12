@@ -8,11 +8,8 @@ class Book(database.Model):
     title = database.Column(database.String(200), nullable=False)
     author = database.Column(database.String(100), nullable=False)
 
-    libraryId = database.Column(
-        database.Integer,
-        database.ForeignKey("libraries.id"),
-        nullable=False
-    )
+    libraryId = database.Column(database.Integer,database.ForeignKey("libraries.id"),nullable=False)
+
 
     createdAt = database.Column(database.DateTime, default=datetime.utcnow)
 

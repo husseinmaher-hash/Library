@@ -5,7 +5,8 @@ class User(database.Model):
     __tablename__ = "users"
     id = database.Column(database.Integer, primary_key=True)
     name = database.Column(database.String(100), nullable=False)
-    library = database.relationship("Library", back_populates="owner", uselist=False)
+    libraryId = database.Column(database.Integer, database.ForeignKey("libraries.id"))
+    library = database.relationship("Library", back_populates="users")
 
     @validates('name')
     def validate_name(self,key, name):

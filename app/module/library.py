@@ -5,7 +5,8 @@ class Library(database.Model):
     __tablename__ = "libraries"
     id = database.Column(database.Integer, primary_key=True)
     name = database.Column(database.String(100), nullable=False, unique=True)
-    books = database.relationship("Book", back_populates="library", cascade="all, delete-orphan")
+    books = database.relationship("Book", back_populates="library", cascade="delete-orphan")
+    users = database.relationship("User")
 
     @validates('name')
     def validate_name(self,key, name):
