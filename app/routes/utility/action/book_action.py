@@ -29,12 +29,14 @@ def createBookAction(data):
     except ValueError as e:
         database.session.rollback()
         return jsonify({"error": str(e)}), 400
+    
     except IntegrityError:
         database.session.rollback()
         return jsonify({"error": "Database integrity violation"}), 400
     except Exception:
         database.session.rollback()
         return jsonify({"error": "Internal server error"}), 500
+
 
 def listBooksAction():
     books = Book.query.all()

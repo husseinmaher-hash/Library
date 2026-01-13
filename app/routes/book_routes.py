@@ -14,8 +14,7 @@ def createBook():
 
 @bookBP.route("/books", methods=["GET"])
 def listBooks():
-    books = Book.query.all()
-    return listBooksAction(books)
+    return listBooksAction()
 
 @bookBP.route("/books/<int:bookId>", methods=["PUT"])
 def updateBook(bookId):

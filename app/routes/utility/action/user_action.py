@@ -69,6 +69,7 @@ def updateUserAction(userId, data):
     except ValueError as e:
         database.session.rollback()
         return jsonify({"error": str(e)}), 400
+    
     except Exception:
         database.session.rollback()
         return jsonify({"error": "Update failed"}), 500

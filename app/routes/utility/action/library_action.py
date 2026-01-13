@@ -20,6 +20,7 @@ def createLibraryAction(data):
         database.session.rollback()
         return jsonify({"unknown error": "Internal server error"}), 500
 
+
 def listLibrariesAction():
     libraries = Library.query.all()
     result = [{"id": lib.id, "name": lib.name} for lib in libraries]
