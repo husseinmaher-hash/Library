@@ -30,9 +30,10 @@ def createUserAction(data):
     except IntegrityError:
         database.session.rollback()
         return jsonify({"error": "Database integrity violation"}), 400
+   
     except Exception as e:
         database.session.rollback()
-        return jsonify({"error": "Internal server error" + str(e)}), 500
+        return jsonify({"error": "Internal server error"}), 500
 
 
 def listUserAction():

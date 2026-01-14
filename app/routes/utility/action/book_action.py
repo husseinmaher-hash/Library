@@ -33,6 +33,7 @@ def createBookAction(data):
     except IntegrityError:
         database.session.rollback()
         return jsonify({"error": "Database integrity violation"}), 400
+    
     except Exception:
         database.session.rollback()
         return jsonify({"error": "Internal server error"}), 500

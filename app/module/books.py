@@ -27,5 +27,6 @@ class Book(database.Model):
         if not author or len(author.strip()) == 0:
             raise ValueError("Author name cannot be empty")
         return author
+    
     def __repr__(self):
         return f"<Book {self.title}>"
