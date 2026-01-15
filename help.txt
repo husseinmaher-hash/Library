@@ -13,6 +13,9 @@ flask --app run.py routes
 sqlite3 app.db
 
 
+python3 -m pytest app/routes/utility/action/unitTest/test_book_action.py
+
+
 
 curl -X POST http://127.0.0.1:5000/libraries \
 -H "Content-Type: application/json" \

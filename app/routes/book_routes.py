@@ -26,6 +26,7 @@ def updateBook(bookId):
 def deleteBook(bookId):
     return deleteBookAction(bookId)
 
+
 @bookBP.route("/books/transfer/<int:usersId>", methods=["PUL"])
 def transferLibrariesUser(usersId):
     return transferLibrariesBooksAction(usersId,request.get_json())

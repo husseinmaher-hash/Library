@@ -77,9 +77,10 @@ def updateBookAction(bookId, data):
     except ValueError as e:
         database.session.rollback()
         return jsonify({"error": str(e)}), 400
+    
     except Exception:
         database.session.rollback()
-        return jsonify({"error": "Update failed" + str(e)}), 500
+        return jsonify({"error": "Update failed"}), 500
 
 
 def transferLibrariesBooksAction(bookId,data):

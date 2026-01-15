@@ -10,7 +10,6 @@ def createApp():
 
     app.config["SECRET_KEY"] = AppConfig.secretKey
     app.config["SQLALCHEMY_DATABASE_URI"] = AppConfig.databaseUrl
-    app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = AppConfig.sqlalchemyTrackModifications
 
     database.init_app(app)
     

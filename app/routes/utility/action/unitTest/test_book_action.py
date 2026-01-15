@@ -25,13 +25,11 @@ def test_createUserAction_ValueError():
 
 
 """
-
 def test_createBookAction_IntegrityError():
     data =     {
-        "author": "F. Hussein Maher",
-        "id": 7,
-        "libraryId": 7,
-        "title": "the nun"
+        "author": "g" * 103,
+        "libraryId": 1,
+        "title": "None"
     }
 
     with app.app_context():
@@ -56,3 +54,12 @@ def test_createBookAction_Internal_server_error():
 
 
 
+def test_updateBookAction_library_not_found():
+    bookId  = 1
+    data = {"title": "dump", "author": "the dumper", "libraryId": 9999} 
+
+    with app.app_context():
+        response, status_code = updateBookAction(bookId, data)
+
+    assert status_code == 404
+    assert response.get_json()["error"] == "Library not found"
