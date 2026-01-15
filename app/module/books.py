@@ -9,7 +9,6 @@ class Book(database.Model):
     author = database.Column(database.String(100), nullable=False)
 
     libraryId = database.Column(database.Integer,database.ForeignKey("libraries.id"),nullable=False)
-
     library = database.relationship("Library", back_populates="books")
 
 
